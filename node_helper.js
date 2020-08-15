@@ -152,7 +152,7 @@ function generateDeviceContainerHTML(wrapper, device){
 
 		if(device.DoorOpen){ StatusString += " - Tür geöffnet"; }
 
-		if(device.Light > 0){ StatusString += " - device.Light"; }
+		if(device.Light > 0){ StatusString += " - Licht an"; }
 
 		var Image;
 

@@ -2,7 +2,7 @@
 
 This is a module for the [MagicMirror²](https://github.com/MichMich/MagicMirror/).
 
-*The module is currently only available in german*
+*The module is currently optimized for german*
 
 *The module is not released by the Miele company*
 

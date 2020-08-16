@@ -150,10 +150,6 @@ function generateDeviceContainerHTML(wrapper, device){
 
 		if(device.ProgramPhase != "") { StatusString += " | " + device.ProgramPhase; }
 
-		if(device.DoorOpen){ StatusString += " - Tür geöffnet"; }
-
-		if(device.Light > 0){ StatusString += " - Licht an"; }
-
 		var Image;
 
 		switch(device.TypeNumber){
@@ -185,13 +181,46 @@ function generateDeviceContainerHTML(wrapper, device){
 
 		var container = "<div class='deviceContainer'>"
 							+"<img src='/modules/MMM-MieleAtHome/Icons/" + Image + "' />"
-							+"<div>"
-							+"<div>"
-								+"<span Class='deviceName'>" + DeviceName + "</span>"
-							+"</div>"
-							+"<div>"
-								+"<span Class='deviceStatus'>${Status}</span>"
-							+"</div>";
+						+"<div>";
+
+		if(device.StatusID != 1){
+			container += "<div>"
+					  	+"<img class='deviceStatusIcon' src='/modules/MMM-MieleAtHome/Icons/Status/Status_OnOff.png' />"
+					  +"</div>";
+		}
+
+		if(device.DoorOpen){
+			container += "<div>"
+					  	+"<img class='deviceStatusIcon' src='/modules/MMM-MieleAtHome/Icons/Status/Status_DoorOpen.png' />"
+					  +"</div>";
+		}
+
+		if(device.Light > 0){
+			container += "<div>"
+					  +"<img class='deviceStatusIcon' src='/modules/MMM-MieleAtHome/Icons/Status/Status_LightOn.png' />"
+					  +"</div>";
+		}
+
+		if(device.InfoAvailable){
+			container += "<div>"
+					  	+"<img class='deviceStatusIcon' src='/modules/MMM-MieleAtHome/Icons/Status/Status_InfoAvailable.png' />"
+					  +"</div>";
+		}
+
+		if(device.Failure){
+			container += "<div>"
+					  	+"<img class='deviceStatusIcon' src='/modules/MMM-MieleAtHome/Icons/Status/Status_Failure.png' />"
+					  +"</div>";
+		}
+
+		container +="</div>"
+			      	+"<div>"
+				  		+"<div>"
+				  			+"<span Class='deviceName'>" + DeviceName + "</span>"
+				  		+"</div>"
+				  		+"<div>"
+				  			+"<span Class='deviceStatus'>${Status}</span>"
+				  		+"</div>";
 
 		//Add Timebar if there is remaining Time
 		if(device.RemainingTime_Hours != 0 | device.RemainingTime_Minutes != 0){

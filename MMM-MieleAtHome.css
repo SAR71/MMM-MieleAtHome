@@ -30,7 +30,7 @@
 
 .deviceContainer {
   display: grid;
-  grid-template-columns: 80px auto;
+  grid-template-columns: 80px 20px auto;
   grid-template-rows: 80px;
   grid-gap: 5px;
   /*background-color: #2196F3;*/
@@ -40,13 +40,21 @@
 .deviceContainer > img {
   	text-align: center;
   	align-self: center;
-    width: 75px;
-    height: 75px;
+    width: 80px;
+    height: 80px;
 }
 
 .deviceContainer > div {
   	text-align: left;
   	align-self: center;
+}
+
+.deviceStatusIcon {
+  text-align: center;
+  align-self: center;
+  line-height: 0.80;
+  width: 12px;
+  height: 12px;
 }
 
 .deviceName{

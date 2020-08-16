@@ -53,8 +53,11 @@
   text-align: center;
   align-self: center;
   line-height: 0.80;
-  width: 12px;
-  height: 12px;
+  color: #FFFFFF;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  width: 15px;
+  height: 15px;
 }
 
 .deviceName{

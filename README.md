@@ -81,4 +81,4 @@ var config = {
 ```
 
 ## Example Screen:
-![Screenshot](Screenshot.JPG)
+![Screenshot](/Screenshots/Screenshot_001.png)

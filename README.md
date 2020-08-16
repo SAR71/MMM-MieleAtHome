@@ -6,9 +6,11 @@ This is a module for the [MagicMirror²](https://github.com/MichMich/MagicMirror
 
 *The module is not released by the Miele company*
 
-Displays Your Bring! List in a table view on your mirror. The refresh interval is 60 Seconds. You need to create a email/password account on the website to use this module. Just use the "create magic link" function in the app, use it to login to the website on a laptop or desktop comupter and create a emailadress/passowrd login.
+I used this repro for the API usage [ioBroker | MieleAtHome](https://github.com/hash99/ioBroker.mieleathome).
 
-The module was created using the REST api they use on their web site by reverse engineering it. It is absolutely unsupported by the bring team. If they change their API it will probably break the module. So use it at your own Risk.
+The module displays your Miele@Home devices on your mirror. You need to have a registred Miele@Home Account with eMail and password with connected Miele@Home devices. You also need to register for a Miele API Account [Miele API Registration](https://www.miele.com/f/com/en/register_api.aspx). You will recieve a client_ID and a client_Secret. The combinaton of username, passwort, client_ID and client_Secret will allow you to use this module.
+
+The module was created using the Miele REST API. It is absolutely unsupported by Miele. If they change their API it will probably break the module. So use it at your own Risk.
 
 ## Install guide
 
@@ -63,19 +65,17 @@ var config = {
 var config = {
     modules: [
         {
-            module: 'MMM-bringList',
-            position: 'top_right',
-            header: 'Einkaufen',
+            module: "MMM-MieleAtHome",
+            position: "top_center",
             config: {
-                listname: 'Zuhause',
-                email: 'someone@example.com',
-                password: 'secret',
-                columns: 3,
-                maxrows: 5,
-                updateInterval: 120000,
-                verboseLogging: true
+                userName: "someone@example.de",
+                password: "secretPassword",
+                client_ID: "12345678-1234-1234-1234-123456789ABC",
+                client_Secret: "aaaabbbccccdddeeeerrrr",
+                showAllDevices: false,
+                updateFrequency: 5000
             }
-       
+        },      
     ]
 }
 ```

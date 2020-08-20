@@ -17,7 +17,7 @@ module.exports = NodeHelper.create({
 	// handle messages from our module// each notification indicates a different messages
 	// payload is a data structure that is different per message.. up to you to design this
 	socketNotificationReceived(notification, payload) {
-		console.log(this.name + " received a socket notification: " + notification + " - Payload: " + payload);
+		//console.log(this.name + " received a socket notification: " + notification + " - Payload: " + payload);
 
 		switch(notification){
 			case "CONFIG":
@@ -40,7 +40,7 @@ module.exports = NodeHelper.create({
 				break;
 
 			case "HTML":
-				console.log(this.name + " HTML changed to: " + payload);
+				//console.log(this.name + " HTML changed to: " + payload);
 				break;
 		}
 	},

@@ -102,16 +102,16 @@ Module.register("MMM-MieleAtHome", {
 			this.sendSocketNotification("CONFIG",this.config)
 		}
 		if (sender) {
-			Log.log(this.name + " received a module notification: " + notification + " from sender: " + sender.name);
+			//Log.log(this.name + " received a module notification: " + notification + " from sender: " + sender.name);
 		} else {
-			Log.log(this.name + " received a system notification: " + notification);
+			//Log.log(this.name + " received a system notification: " + notification);
 		}
 	},
 
 	// messages received from from your node helper (NOT other modules or the system)
 	// payload is a notification dependent data structure, up to you to design between module and node_helper
 	socketNotificationReceived: function(notification, payload) {
-		Log.log(this.name + " received a socket notification: " + notification + " - Payload: " + payload);
+		//Log.log(this.name + " received a socket notification: " + notification + " - Payload: " + payload);
 		
 		switch(notification){
 			case "STARTUP":

@@ -35,7 +35,7 @@ module.exports = NodeHelper.create({
 
 			case "UPDATEREQUEST":
 				getUpdatedHTML(this);
-
+				
 				//this.sendSocketNotification("MMM-MieleAtHome_Update", html);					
 				break;
 

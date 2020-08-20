@@ -41,8 +41,8 @@ Module.register("MMM-MieleAtHome", {
 		Log.log(this.name + " is starting!");
 
 		var timer = setInterval(()=>{
-			this.updateDom();
 			this.sendSocketNotification("UPDATEREQUEST", null)
+			this.updateDom();			
 		}, this.config.updateFrequency)
 	},
 
@@ -115,12 +115,14 @@ Module.register("MMM-MieleAtHome", {
 		
 		switch(notification){
 			case "STARTUP":
-				some_other_variable = payload;
+				this.HTML = payload;
+				//some_other_variable = payload;
 				this.updateDom(1000);
 			break;
 
 			case "MMM-MieleAtHome_Update":
-				some_other_variable = payload;
+				this.HTML = payload;
+				//some_other_variable = payload;
 			break;
 		}
 	},
@@ -141,9 +143,11 @@ Module.register("MMM-MieleAtHome", {
 	getDom: function() {
 		var wrapper = document.createElement("div");
 
-		wrapper.innerHTML = "<p></p>";
+		wrapper.innerHTML = "<p>" + this.HTML + "</p>";
 
-		this.sendSocketNotification("HTML", wrapper.innerHTML)
+		//Zum Debuggen zurücksenden
+		//this.sendSocketNotification("HTML", wrapper.innerHTML)
+
 		return wrapper;
 	},
 })

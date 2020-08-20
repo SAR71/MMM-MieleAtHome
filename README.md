@@ -79,6 +79,17 @@ var config = {
     ]
 }
 ```
+## Updating
+
+To update the module to the latest version, use your terminal to go to your MMM-MieleAtHome module folder and type the following command:
+
+````
+git pull
+```` 
+
+If you haven't changed the modules, this should work without any problems. 
+Type `git status` to see your changes, if there are any, you can reset them with `git reset --hard`. After that, git pull should be possible.
+
 
 ## Example Screen:
 ![Screenshot](/Screenshots/Screenshot_001.png)

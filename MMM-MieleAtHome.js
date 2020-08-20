@@ -141,6 +141,8 @@ Module.register("MMM-MieleAtHome", {
 	getDom: function() {
 		var wrapper = document.createElement("div");
 
+		wrapper.innerHTML = "<p></p>";
+
 		this.sendSocketNotification("HTML", wrapper.innerHTML)
 		return wrapper;
 	},

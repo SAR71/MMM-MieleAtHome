@@ -44,7 +44,7 @@ var config = {
 ## Configuration options
 
 | Option                            | Default                       | Description
-|-----------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------
+|-----------------------------------|:-----------------------------:|---------------------------------------------------------------------
 | `userName`                        | ''                            | *Required* The email adress to log in to your miele account 
 | `password`                        | ''                            | *Required* The password to log in to your bring account 
 | `client_ID`                       | ''                            | *Required* The number of colums in the table view (default = `4`)
@@ -57,7 +57,7 @@ var config = {
 | `ignoreDevices`                   | []                            | *Optional* array with DeviceIDs which should be ignored
 | `useIndividualNames`              | false                         | *Optional* Show individual name (you can set them in the Miele App)
 | `vg`                              | 'de-DE'                       | *Optional* Language (I actually don't know what this is for :-D )
-| `language`                        | 'de'                          | *Optional* Language of the status etc. (only the language the API gives back) Some things are still in german
+| `language`                        | 'de'                          | *Optional* Language of the status etc.
 | `updateFrequency`                 | 5000                          | *Optional* Update Frequency in ms
 
 ### Example configuration:

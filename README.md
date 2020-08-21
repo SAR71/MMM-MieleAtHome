@@ -44,7 +44,7 @@ var config = {
 ## Configuration options
 
 | Option                            | Default                       | Description
-|-----------------------------------|-----------
+|-----------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------
 | `userName`                        | ''                            | *Required* The email adress to log in to your miele account 
 | `password`                        | ''                            | *Required* The password to log in to your bring account 
 | `client_ID`                       | ''                            | *Required* The number of colums in the table view (default = `4`)

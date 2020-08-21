@@ -12,6 +12,8 @@ The module displays your Miele@Home devices on your mirror. You need to have a r
 
 The module was created using the Miele REST API. It is absolutely unsupported by Miele. If they change their API it will probably break the module. So use it at your own Risk.
 
+*The icons I have from [FlatIcon](https://www.flaticon.com/).*
+
 ## Install guide
 
 login to your rapberry pi, cd into the modules folder and execute

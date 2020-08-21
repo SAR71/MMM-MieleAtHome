@@ -43,22 +43,22 @@ var config = {
 
 ## Configuration options
 
-| Option                            | Description
+| Option                            | Default                       | Description
 |-----------------------------------|-----------
-| `userName`                        | *Required* The email adress to log in to your miele account 
-| `password`                        | *Required* The password to log in to your bring account 
-| `client_ID`                       | *Required* The number of colums in the table view (default = `4`)
-| `client_Secret`                   | *Required* The maximum number of rows to display in the table view (default = `4`)
-| `BaseURL`                         | *Optional* ???
-| `showAlwaysAllDevices`            | *Optional* ???
-| `showDeviceIfDoorIsOpen`          | *Optional* ???
-| `showDeviceIfFailure`             | *Optional* ???
-| `showDeviceIfInfoIsAvailable`     | *Optional* ???
-| `ignoreDevices`                   | *Optional* ???
-| `useIndividualNames`              | *Optional* ???
-| `vg`                              | *Optional* ???
-| `language`                        | *Optional* ???
-| `updateFrequency`                 | *Optional* ???
+| `userName`                        | ''                            | *Required* The email adress to log in to your miele account 
+| `password`                        | ''                            | *Required* The password to log in to your bring account 
+| `client_ID`                       | ''                            | *Required* The number of colums in the table view (default = `4`)
+| `client_Secret`                   | ''                            | *Required* The maximum number of rows to display in the table view (default = `4`)
+| `BaseURL`                         | 'https://api.mcs3.miele.com/' | *Optional* Url to the Miele API
+| `showAlwaysAllDevices`            | false                         | *Optional* If you alway want to see al devices on the mirror even if the device is off
+| `showDeviceIfDoorIsOpen`          | true                          | *Optional* if showAlwaysAllDevices is true, a device will be shown if Door is open
+| `showDeviceIfFailure`             | true                          | *Optional* if showAlwaysAllDevices is true, the device will be shown if there is a failure
+| `showDeviceIfInfoIsAvailable`     | true                          | *Optional* if showAlwaysAllDevices is true, the device will be shown if info is aAvailable
+| `ignoreDevices`                   | []                            | *Optional* array with DeviceIDs which should be ignored
+| `useIndividualNames`              | false                         | *Optional* Show individual name (you can set them in the Miele App)
+| `vg`                              | 'de-DE'                       | *Optional* Language (I actually don't know what this is for :-D )
+| `language`                        | 'de'                          | *Optional* Language of the status etc. (only the language the API gives back) Some things are still in german
+| `updateFrequency`                 | 5000                          | *Optional* Update Frequency in ms
 
 ### Example configuration:
 ```js

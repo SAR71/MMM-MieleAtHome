@@ -52,6 +52,7 @@ var config = {
 | `client_ID`                       | ''                            | *Required* The number of colums in the table view (default = `4`)
 | `client_Secret`                   | ''                            | *Required* The maximum number of rows to display in the table view (default = `4`)
 | `BaseURL`                         | 'https://api.mcs3.miele.com/' | *Optional* Url to the Miele API
+| `showDeviceIcon`                  | true                          | *Optional* Show or hide the icon of the devices
 | `showAlwaysAllDevices`            | false                         | *Optional* If you alway want to see al devices on the mirror even if the device is off
 | `showDeviceIfDoorIsOpen`          | true                          | *Optional* if showAlwaysAllDevices is true, a device will be shown if Door is open
 | `showDeviceIfFailure`             | true                          | *Optional* if showAlwaysAllDevices is true, the device will be shown if there is a failure

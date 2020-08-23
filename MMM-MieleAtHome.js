@@ -22,6 +22,7 @@ Module.register("MMM-MieleAtHome", {
         client_ID: "",
 		client_Secret: "",
 		BaseURL: 'https://api.mcs3.miele.com/',
+		showDeviceIcon: true, //Show or hide the icon of the devices
 		showAlwaysAllDevices: false, //if true all devices will be shown, despite if on or off
 		showDeviceIfDoorIsOpen: true, //if showAlwaysAllDevices is true, the device will be shown if Door is open
 		showDeviceIfFailure: true, //if showAlwaysAllDevices is true, the device will be shown if there is a failure

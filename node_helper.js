@@ -153,20 +153,92 @@ function generateDeviceContainerHTML(wrapper, device){
 		var Image;
 
 		switch(device.TypeNumber){
+			case 1:				
+				Image = "Miele/1.png";
+			break;
+
+			case 2:				
+				Image = "Miele/2.png";
+			break;
+
+			case 7:				
+				Image = "Miele/7.png";
+			break;
+
+			case 10:				
+				Image = "Miele/10.png";
+			break;
+
+			case 11:				
+				Image = "Miele/11.png";
+			break;
+
+			case 12:				
+				Image = "Miele/12.png";
+			break;
+
+			case 13:				
+				Image = "Miele/13.png";
+			break;
+
+			case 14:				
+				Image = "Miele/14.png";
+			break;
+
+			case 15:				
+				Image = "Miele/15.png";
+			break;
+
+			case 16:				
+				Image = "Miele/16.png";
+			break;
+
+			case 17:				
+				Image = "Miele/17.png";
+			break;
+
 			case 18:
-				Image = "Icon_018.png";
+				//Dunstabzugshaube
+				Image = "Miele/18.png";
+			break;
+
+			case 19:				
+				Image = "Miele/19.png";
+			break;
+
+			case 20:				
+				Image = "Miele/20.png";
 			break;
 
 			case 21:
-				Image = "Icon_021.png";
+				//Kühl-/Gefriekombination
+				Image = "Miele/21.png";
+			break;
+
+			case 24:				
+				Image = "Miele/24.png";
 			break;
 
 			case 27:
-				Image = "Icon_027.png";
+				//Induktionsherd
+				Image = "Miele/27.png";
 			break;
 
 			case 31:
-				Image = "Icon_031.png";
+				//Combidampfgarer
+				Image = "Miele/31.png";
+			break;
+
+			case 32:				
+				Image = "Miele/32.png";
+			break;
+
+			case 33:				
+				Image = "Miele/33.png";
+			break;
+
+			case 34:				
+				Image = "Miele/34.png";
 			break;
 
 			default:
@@ -178,10 +250,15 @@ function generateDeviceContainerHTML(wrapper, device){
 		if(_config.useIndividualNames && device.TypeNumber){
 			DeviceName = device.NameManual;
 		}
+		
+		var container = "<div class='deviceContainerWithoutDeviceIcon'>"					
+					    + "<div>";
 
-		var container = "<div class='deviceContainer'>"
-							+"<img src='/modules/MMM-MieleAtHome/Icons/" + Image + "' />"
-						+"<div>";
+		if(_config.showDeviceIcon){
+			container = "<div class='deviceContainer'>"
+					  	  + "<img src='/modules/MMM-MieleAtHome/Icons/" + Image + "' />"
+					  + "<div>";
+		}		
 
 		if(device.StatusID != 1){
 			container += "<div>"

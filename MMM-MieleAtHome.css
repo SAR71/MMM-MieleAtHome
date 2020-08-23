@@ -1,8 +1,8 @@
 .MMM-MieleAtHome {
   min-width: 320px;
   max-width: 600px;
-  line-height: 0.90;
-  font-size: 20px;
+  line-height: 0.9;
+  font-size: 14px;
   margin: 0;
   padding: 0;
   position: relative;
@@ -29,8 +29,17 @@
 
 .deviceContainer {
   display: grid;
-  grid-template-columns: 80px 20px auto;
-  grid-template-rows: 80px;
+  grid-template-columns: 60px 20px auto;
+  grid-template-rows: 60px;
+  grid-gap: 5px;
+  /*background-color: #2196F3;*/
+  padding: 5px;
+}
+
+.deviceContainerWithoutDeviceIcon {
+  display: grid;
+  grid-template-columns: 20px auto;
+  grid-template-rows: 60px;
   grid-gap: 5px;
   /*background-color: #2196F3;*/
   padding: 5px;
@@ -39,8 +48,8 @@
 .deviceContainer > img {
   	text-align: center;
   	align-self: center;
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
 }
 
 .deviceContainer > div {
@@ -60,7 +69,7 @@
 }
 
 .deviceName{
-	font-size: 14px;
+	font-size: 16px;
   font-weight: bold;
   color: #FFFFFF;
 }

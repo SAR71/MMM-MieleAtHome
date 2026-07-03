@@ -1,0 +1,226 @@
+.MMM-MieleAtHome {
+  min-width: 320px;
+  max-width: 600px;
+  line-height: 1.2;
+  font-size: 14px;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  text-align: left;
+}
+
+.MMM-MieleAtHome header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  white-space: nowrap;
+  margin-bottom: 8px;
+}
+
+.MMM-MieleAtHome .logo {
+  display: inline-block;
+  height: 34px;
+  width: auto;
+  vertical-align: middle;
+  margin-right: 8px;
+}
+
+.MMM-MieleAtHome header span {
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.MMM-MieleAtHome .devicesList {
+  display: grid;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.MMM-MieleAtHome .deviceCard {
+  display: grid;
+  grid-template-columns: 58px minmax(0, 1fr);
+  gap: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 14px;
+  padding: 10px;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.02));
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+.MMM-MieleAtHome .deviceCardIconWrap {
+  width: 58px;
+  height: 58px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.04);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.MMM-MieleAtHome .deviceCardIcon {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+}
+
+.MMM-MieleAtHome .deviceCardContent {
+  min-width: 0;
+}
+
+.MMM-MieleAtHome .deviceTopRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.MMM-MieleAtHome .deviceName {
+  font-size: 15px;
+  font-weight: 700;
+  color: #fff;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.MMM-MieleAtHome .deviceStatusPill {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+  border-radius: 999px;
+  padding: 3px 8px;
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+
+.MMM-MieleAtHome .deviceStatusPill.status-running {
+  color: #9ae6b4;
+  border-color: rgba(154, 230, 180, 0.4);
+  background: rgba(36, 143, 85, 0.2);
+}
+
+.MMM-MieleAtHome .deviceStatusPill.status-idle {
+  color: #d6dee5;
+  border-color: rgba(214, 222, 229, 0.32);
+  background: rgba(109, 128, 145, 0.18);
+}
+
+.MMM-MieleAtHome .deviceStatusPill.status-error {
+  color: #ffb3b3;
+  border-color: rgba(255, 129, 129, 0.45);
+  background: rgba(181, 45, 45, 0.23);
+}
+
+.MMM-MieleAtHome .deviceStatusPill.status-unknown {
+  color: #d2d2d2;
+  border-color: rgba(189, 189, 189, 0.4);
+  background: rgba(130, 130, 130, 0.22);
+}
+
+.MMM-MieleAtHome .deviceMetaRow {
+  margin-top: 4px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.MMM-MieleAtHome .deviceMetaText {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.74);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  padding: 2px 6px;
+  border-radius: 999px;
+}
+
+.MMM-MieleAtHome .deviceIndicatorsRow {
+  margin-top: 7px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.MMM-MieleAtHome .deviceIndicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  border-radius: 999px;
+  padding: 2px 7px;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.86);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.MMM-MieleAtHome .deviceIndicator img {
+  width: 12px;
+  height: 12px;
+}
+
+.MMM-MieleAtHome .deviceIndicator.warn {
+  background: rgba(255, 166, 0, 0.2);
+  color: #ffd9a1;
+}
+
+.MMM-MieleAtHome .deviceIndicator.danger {
+  background: rgba(227, 80, 80, 0.24);
+  color: #ffc3c3;
+}
+
+.MMM-MieleAtHome .deviceIndicator.info {
+  background: rgba(74, 144, 226, 0.22);
+  color: #c8e4ff;
+}
+
+.MMM-MieleAtHome .deviceProgressBlock {
+  margin-top: 8px;
+}
+
+.MMM-MieleAtHome .deviceProgressHead {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 4px;
+}
+
+.MMM-MieleAtHome .deviceProgressTrack {
+  width: 100%;
+  height: 7px;
+  border-radius: 999px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.MMM-MieleAtHome .deviceProgressFill {
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #4dd0e1, #81c784, #ffd54f);
+  transition: width 400ms ease;
+}
+
+.MMM-MieleAtHome .deviceAuxRow {
+  margin-top: 8px;
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.MMM-MieleAtHome .deviceDebugBlock {
+  margin-top: 8px;
+  padding: 7px 8px;
+  border: 1px dashed rgba(255, 255, 255, 0.26);
+  border-radius: 8px;
+  font-size: 10px;
+  line-height: 1.35;
+  color: rgba(255, 255, 255, 0.72);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.MMM-MieleAtHome .loading {
+  margin-top: 8px;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 12px;
+}

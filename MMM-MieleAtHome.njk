@@ -1,0 +1,108 @@
+<div>
+  <header>
+    <img class="logo" src="/modules/MMM-MieleAtHome/Logos/Miele_Logo_M_Red_sRGB.svg" alt="Miele Logo" />
+    <span>@ HOME</span>
+  </header>
+
+  {% if prompt %}
+  <p class="xsmall normal regular">
+    {{ prompt }}
+  </p>
+  {% if authorizationUrl %}
+  <p class="xsmall normal regular">
+    Login URL: <a href="{{ authorizationUrl }}" target="_blank" rel="noopener noreferrer">{{ authorizationUrl }}</a>
+  </p>
+  {% endif %}
+  {% elif devices and devices.length > 0 %}
+  <div class="devicesList">
+    {% for device in devices %}
+    <article class="deviceCard">
+      {% if showDeviceIcon %}
+      <div class="deviceCardIconWrap">
+        <img class="deviceCardIcon" src="{{ device.iconPath }}" alt="{{ device.type }}" onerror="this.onerror=null;this.src='/modules/MMM-MieleAtHome/Icons/Icon_000.png';" />
+      </div>
+      {% endif %}
+
+      <div class="deviceCardContent">
+        <div class="deviceTopRow">
+          <div class="deviceName">{{ device.name }}</div>
+          <span class="deviceStatusPill status-{{ device.statusClass }}">{{ device.status }}</span>
+        </div>
+
+        <div class="deviceMetaRow">
+          {% if device.type %}
+          <span class="deviceMetaText">{{ device.type }}</span>
+          {% endif %}
+          {% if device.supports and device.supports.programPhase and device.programPhase %}
+          <span class="deviceMetaText">{{ device.programPhase }}</span>
+          {% endif %}
+        </div>
+
+        <div class="deviceIndicatorsRow">
+          <span class="deviceIndicator">
+            <img src="{{ statusIcons.power }}" alt="Power" />
+            <span>{{ "An" if device.isOn else "Aus" }}</span>
+          </span>
+
+          {% if device.supports and device.supports.signalDoor and device.doorOpen is not none %}
+          <span class="deviceIndicator {{ 'warn' if device.doorOpen else '' }}">
+            {% if device.doorOpen %}
+            <img src="{{ statusIcons.doorOpen }}" alt="Door" />
+            {% else %}
+            <i class="fa fa-check-circle" aria-hidden="true"></i>
+            {% endif %}
+            <span>{{ device.doorLabel if device.doorLabel else ('Offen' if device.doorOpen else 'Geschlossen') }}</span>
+          </span>
+          {% endif %}
+
+          {% if device.supports and device.supports.signalFailure and device.hasFailure %}
+          <span class="deviceIndicator danger">
+            <img src="{{ statusIcons.failure }}" alt="Failure" />
+            <span>Fehler</span>
+          </span>
+          {% endif %}
+
+          {% if device.supports and device.supports.signalInfo and device.hasInfo %}
+          <span class="deviceIndicator info">
+            <img src="{{ statusIcons.info }}" alt="Info" />
+            <span>Info</span>
+          </span>
+          {% endif %}
+        </div>
+
+        {% if device.supports and device.supports.remainingTime and device.remainingTime and device.progressPercent is not none %}
+        <div class="deviceProgressBlock">
+          <div class="deviceProgressHead">
+            <span>{{ device.progressPercent }}%</span>
+            <span>Restzeit {{ device.remainingTime }}</span>
+          </div>
+          <div class="deviceProgressTrack">
+            <div class="deviceProgressFill" style="width: {{ device.progressPercent }}%;"></div>
+          </div>
+        </div>
+        {% elif device.supports and device.supports.remainingTime and device.remainingTime %}
+        <div class="deviceAuxRow">
+          {% if device.remainingTime %}<span>Restzeit {{ device.remainingTime }}</span>{% endif %}
+          {% if device.supports and device.supports.targetTemperature and device.targetTemperature %}<span>Soll {{ device.targetTemperature }}</span>{% endif %}
+        </div>
+        {% endif %}
+
+        {% if capabilityDebug %}
+        <div class="deviceDebugBlock">
+          <div><strong>Debug</strong> Typ-ID: {{ device.debugTypeRaw }}</div>
+          <div>Supports: {{ device.supportsEnabledText }}</div>
+          <div>Raw Minuten: elapsed={{ device.debugElapsedRaw }}, remaining={{ device.debugRemainingRaw }}</div>
+          <div>Statusklasse: {{ device.statusClass }}</div>
+        </div>
+        {% endif %}
+
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+  {% else %}
+  <p class="loading">
+    Warte auf Geraetedaten...
+  </p>
+  {% endif %}
+</div>
